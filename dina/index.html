@@ -286,9 +286,7 @@
     const next = document.querySelector('.next-link');
     next.classList.add('ready');
     next.firstChild.textContent = 'Continue to company profile ';
-    if (ios) {
-      document.getElementById('hint').textContent = 'Tap "Create New Contact", then "Done" to save';
-    } else {
+    if (!ios) {
       toast('Open the downloaded contact and tap Save');
       document.getElementById('hint').textContent = 'Contact card sent to your phone ✓';
       setTimeout(() => { location.hash = '#company'; }, 2500);
